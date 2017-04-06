@@ -205,3 +205,35 @@ $(document).ready(function(){
 //     });
 // });
 
+
+
+// find height for overlay effect
+
+
+$(window).ready(function($) {
+	$('.johnDoe').each(function() {
+	 /* iterate through array or object */
+	 var overlay = $(this).height();
+	$('.flip').hover(function() {
+		$('.overlay').css({
+	 		bottom: overlay,
+	 		height: overlay
+	 	});
+	 	// $('.overlay:not(:hover)').css({
+	 	// 	bottom: '0',
+	 	// 	height: '0'
+	 	// });
+	 }, function() {
+	 	/* Stuff to do every *even* time the element is clicked */
+	 	$('.overlay').css({
+	 		bottom: '0',
+	 		height: '0'
+	 	});
+	});
+});
+});
+
+
+
+
+
