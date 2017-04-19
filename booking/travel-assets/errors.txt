@@ -1,0 +1,6 @@
+[Fri Apr 07 2017 18:33:19 GMT+0300 (FLE Summer Time)] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Apr 07 2017 18:33:19 GMT+0300 (FLE Summer Time)] layer "+ copy": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Apr 07 2017 18:33:19 GMT+0300 (FLE Summer Time)] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Apr 07 2017 18:33:19 GMT+0300 (FLE Summer Time)] layer "+ copy 2": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Apr 07 2017 18:33:19 GMT+0300 (FLE Summer Time)] layer "+ copy 3": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Apr 07 2017 18:33:19 GMT+0300 (FLE Summer Time)] layer "+ copy 4": Expected Either a default asset specification or a layer asset specification but "+" found.

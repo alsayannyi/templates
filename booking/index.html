@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>travel</title>
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+  crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i|Quicksand:400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+<!-- CSS Styles -->
+<link rel="stylesheet" href="css/less_css.css">
+<!-- jQuery Datepicker -->
+<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.theme.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#arrival" ).datepicker();
+    $( "#departure" ).datepicker();
+
+  } );
+  </script>
+</head>
+<body>
+<header>
+	<nav>
+		<div class="container">
+			<div class="row top2">
+				<div class="col-xs-6 logo">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="123" height="60" viewBox="0 0 123 60">
+					<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAA8CAMAAABxRDWZAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACbVBMVEUAAAC0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0llgAAAAqKy31AAAAzXRSTlMAD0l4osHZ5vL08O7g1NDKwLGwp6CdkISAenBgVlBNQDMwKSAeEAMSbcP98xWS9bZh61oGoxQJuuFIrP6RDHw4Nvz5f8cqbgK3KDotGQTFXF+PuN3723s9B2zvu4dnHahRP5fx5X20z1kFDXHndlteAVKlFgqK0TQY7Ve9PPpr+CuGOT7Y3IMk9jez7E++ppS54koO5FXfE8guVM4XQW+vG5bStWVjciYI6EwsJ6HXO8SCaI4fC133reqci0MRpMLjNbIxrkZqmMvpjZ+pJuaqswAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAPuSURBVFjDvZj5W4xRFMcv075JKaMpY2qGZNCYRI2thZEo1YSSSikVbUxEkiVLkjD2XbaQsqVk34X3f3Jnpv3cO807c9/5/tAz73vuez7vOc95T+dehNhowkSRk7OLqxtnkruHp5eXt88kX9/Jfv5TAgIDp4qnBQVJJMEh06XSGbLQMLlCMZMNeFb47AiOr+aEMyAr587jDea4+XIG6EgPG8iqBQzIaicbyFzUQgbo6EU2kBfHMCCjmbH8yZolS1mg0TL+aO/lTMhoRRxfcnyCmg1a7c0XnbiSDRmhBJ5k91VaVujQeH7o1fRuokySrZElr11nLVqbwousSiV6SVqflp6hG1gTkem3YeMmK9hZo1xnb87ZEmJJSoKL3JgoT/CSbnn548Uvdxte7pq21db/StqNBYUAv61IYfGh4qGV20tKbQSbVbZjJ6B7llvwWTEUc2WV8VpRnROb4kPUrt3j0fU1sFHs2UtbXbtvYImTMTvq/XXULhMvtqZ4DsDQ6w9S1vqZ7Q0SIznIlV7eiYesS7zcBT572FLGC4/g30cb6WQe3UR5DD6eQM+4KhnX6XEL09JqPrPJiWzooJqW8ZNNuEpO0cnNqTzIWPnQRXYuJeOnEVraQkefUfJDI9QKnRSTM16Dq+wslXzuPF8yQoYL0M+YEcec8Trc+MpkVNk0m1yE7D2jitWc8UuXbXE+nq5AeAXI+LyrQqCRFLJ9RpjNhX0Nod3XvYjKu2EH3BnCbw4ZJabrqQiVEpZhud+yazaZCD3eHrTdMW1CTmH/d4nos2H2Jb2qDbjUDebxnvGq0YDQfRJ5X6V9ZKwH0OvDERn3eITQkXoC2p93N4FqV8HPbDjjEbhr3HlM6CZP7Cdj1UDPT4cyLsIvNwnYNa0GJmjUAdk5+Hak8UdeFULPgLmziw0Z6zlw7lVlng599AgFgVJ8Yc1sYqVewsC70Cv8V/UaWw2KMepmR8YHKDrAvove4AClLCkUFQN2s7rMg8tyANoY41gFI1EAbjyjd/sMuglQWQ9g16F1eO9cNOpeHoNuAtULA+/At6drRgbNcyCzViGQjTOORMNF2BAoSNBYpW8Bu944NJ7ocze1sTZRrUBkrHcw8AKTQd1Ukvr+g3BgrDA488c1CUocIcLRWYYgAyJBhzQQ7svohGpcfYRsLl3vGHYtYXPGfRLqwxqjSAKb+/zFMXBS1jmd2L7jFSvV3kKCc97vHQHXUzaaX785AF6aRoZz3x3RZ34co9BTJExHJaLUPzMp9Dl9B5gdDNOkDentoeBdf8VEC43vzg/8TTm+6//TITQdf3GyCvHfls5+0zs09Ls8/5dWXtJlR5/7DwvF0TTheqHsAAAAAElFTkSuQmCC" width="123" height="60"/>
+					</svg>
+
+				</div>
+				<div class="col-xs-6 pull-right pageMenu">
+					<ul class="menuNav text-center">
+						<li><a href="#" class="text-uppercase">membersgip</a>
+							<a href="#" class="text-uppercase">destinations</a>
+							</li>
+						<li><a href="#" class="text-uppercase">members section</a>
+							<a href="#" class="text-uppercase">about us</a></li>
+						<li><a href="#" class="text-uppercase">resorts</a>
+							<a href="#" class="text-uppercase">contact</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="banner">
+		<div class="container">
+			<div class="row top170">
+				<div class="title col-xs-12">
+					 <p class="india text-uppercase"><span>india</span></p>
+					 <p class="cities">
+					 <span>Goa</span>
+					 <span>Shimla</span>
+					 <span>Kumarakom</span>
+					 <span>Jaipur</span></p>
+				</div>
+			</div> <!-- top170-end -->
+
+				<div class="bookingForm">
+					<form class="form-inline row">
+
+					  <div class="dateField form-group col-xs-12 col-md-4">
+					    <label for="arrival">ARRIVAL</label>
+					    <input type="text" class="calendar form-control" id="arrival" placeholder="check-in date">
+					  </div>
+						
+					  <div class="dateField form-group col-xs-12 col-md-4">
+					    <label for="departure">DEPARTURE</label>
+					    <input type="text" class="calendar form-control" id="departure"
+					     placeholder="leaving date">
+					  </div>
+					
+					 <div class="col-xs-12 col-md-4">
+					 	<div class="row padding0">	
+							<div class="people form-group col-xs-4 col-sm-3 padding0">
+					    		<label for="adult">ADULTS</label>
+					    		<select class="quantity form-control" id="adult">
+								  	<option><span>1</span></option>
+								 	<option>2</option>
+								 	<option>3</option>
+								 	<option>4</option>
+								 	<option>5</option>
+								  	<option>6</option>
+								</select>
+					  		</div>
+							 <div class=" people form-group col-xs-4 col-sm-3 padding0">
+							    <label for="kid">KIDS</label>
+							    <select class="quantity form-control" id="kid">
+								  <option>0</option>
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								</select>
+							  </div>
+
+							  <div class="col-xs-4 col-sm-6 fix">			
+							  <div class="buttonWrapper container-fluid ">
+							  	<div class="row padding0 userHeight">
+								  <button type="submit" class="col-xs-12 login btn btn-default text-uppercase">login</button>
+								</div>
+								<div class="row padding0 userHeight userHeight2">
+								  <button type="submit" class="col-xs-12 reserve btn btn-default text-uppercase">reserve now</button>
+								</div>
+							</div>
+					  		</div>
+				    </form>	
+
+					 	</div> <!-- row-end -->
+					 </div>			
+				
+				    </form>
+				</div>	 <!-- bookingForm-end and row-end -->
+			
+
+			
+		</div>
+	</div>  <!-- banner-end -->
+
+
+</header>
+<!-- Services Section -->
+<section class="services">
+	<div class="container top60">
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 block4 text-center">
+				<img class="img-responsive img4" src="images/tickets.jpg" alt="tickets">
+				<div class="add">
+					<span class="glyphicon glyphicon-plus center-block" aria-hidden="true"></span>
+				</div>
+				<div class="cellWrapper">
+					<p class="text-uppercase serviceName center-block"> air tickets</p>
+					<div class="divideLine center-block"></div>
+					<p class="textLine center-block">Donec pulvinar, sapien eu posuere</p>
+				</div> <!-- wrapper -->
+			</div> <!-- block end -->
+
+			<div class="col-xs-12 col-sm-3 block4 text-center rent">
+				<img class="img-responsive img4" src="images/children.jpg" alt="kids">
+				<div class="add">
+					<span class="glyphicon glyphicon-plus center-block" aria-hidden="true"></span>
+				</div>
+				<div class="cellWrapper">
+					<p class="text-uppercase serviceName center-block"> car rent</p>
+					<div class="divideLine center-block"></div>
+					<p class="textLine center-block">Donec pulvinar, sapien eu posuere</p>
+				</div> <!-- wrapper -->
+			</div> <!-- block end -->
+
+			<div class="col-xs-12 col-sm-3 block4 text-center insurance">
+				<img class="img-responsive img4" src="images/pool.jpg" alt="pool">
+
+				<div class="add">
+					<span class="glyphicon glyphicon-plus center-block" aria-hidden="true"></span>
+				</div>
+				<div class="cellWrapper">
+					<p class="text-uppercase serviceName center-block"> travel insurance</p>
+					<div class="divideLine center-block"></div>
+					<p class="textLine center-block">Donec pulvinar, sapien eu posuere</p>
+				</div> <!-- wrapper -->
+			</div> <!-- block end -->
+
+			<div class="col-xs-12 col-sm-3 block4 text-center attraction">
+				<img class="img-responsive img4" src="images/temple.jpg" alt="temple">
+				<div class="add">
+					<span class="glyphicon glyphicon-plus center-block" aria-hidden="true"></span>
+				</div>
+				<div class="cellWrapper">
+					<p class="text-uppercase serviceName center-block"> tickets & attractions</p>
+					<div class="divideLine center-block"></div>
+					<p class="textLine center-block">Donec pulvinar, sapien eu posuere</p>
+				</div> <!-- wrapper -->
+			</div> <!-- block end -->
+		</div> <!-- row -->
+
+		<div class="row top60">
+			<div class="col-xs-12 col-sm-6 booking">
+				<img class="img-responsive" src="images/resort.jpg" alt="resort">
+				<div class="row addWrapper padding0">
+					<div class="col-xs-8 pull-left">
+						<div class="week text-uppercase">resort of the week</div>
+						<p class="resort text-uppercase">resort jimbaran</p>
+						<div class="divideLine center-block"></div>
+						<p class="textLine center-block">Jimbaran, Bali</p>
+					</div>
+					<div class="col-xs-4 pull-right addStyles">
+						<p class=" price text-uppercase">starts from</p>
+						<p class="dollar">$450</p>
+						<div class="bookButton text-uppercase btn btn-default">book now</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 text-center register">
+				<img class="img-responsive" src="images/resort.jpg" alt="resort">
+				<div class="registerWrapper">
+					<p class="text-uppercase member">become member</p>
+					<div class="divideLine center-block"></div>
+					<p class="textLine center-block">Donec pulvinar, sapien eu posuere ullamcorper, enim sapien feugiat nibh, semper posuere tortor augue quis dolor. Integer semper ullamcorper turpis.</p>
+				</div>
+				<div class="regButton text-uppercase btn btn-default">register now</div>
+			</div>
+		</div>
+		<!-- Google Map -->
+		<div class="row top60">
+			<div class="col-xs-12" id="map">
+				
+			</div>
+		</div>
+		
+	</div> <!-- container-top60 -->
+</section>
+
+<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="top160 logo col-xs-12 text-center">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="123" height="60" viewBox="0 0 123 60">
+					<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAA8CAMAAABxRDWZAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACbVBMVEUAAAC0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0lli0llgAAAAqKy31AAAAzXRSTlMAD0l4osHZ5vL08O7g1NDKwLGwp6CdkISAenBgVlBNQDMwKSAeEAMSbcP98xWS9bZh61oGoxQJuuFIrP6RDHw4Nvz5f8cqbgK3KDotGQTFXF+PuN3723s9B2zvu4dnHahRP5fx5X20z1kFDXHndlteAVKlFgqK0TQY7Ve9PPpr+CuGOT7Y3IMk9jez7E++ppS54koO5FXfE8guVM4XQW+vG5bStWVjciYI6EwsJ6HXO8SCaI4fC133reqci0MRpMLjNbIxrkZqmMvpjZ+pJuaqswAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAPuSURBVFjDvZj5W4xRFMcv075JKaMpY2qGZNCYRI2thZEo1YSSSikVbUxEkiVLkjD2XbaQsqVk34X3f3Jnpv3cO807c9/5/tAz73vuez7vOc95T+dehNhowkSRk7OLqxtnkruHp5eXt88kX9/Jfv5TAgIDp4qnBQVJJMEh06XSGbLQMLlCMZMNeFb47AiOr+aEMyAr587jDea4+XIG6EgPG8iqBQzIaicbyFzUQgbo6EU2kBfHMCCjmbH8yZolS1mg0TL+aO/lTMhoRRxfcnyCmg1a7c0XnbiSDRmhBJ5k91VaVujQeH7o1fRuokySrZElr11nLVqbwousSiV6SVqflp6hG1gTkem3YeMmK9hZo1xnb87ZEmJJSoKL3JgoT/CSbnn548Uvdxte7pq21db/StqNBYUAv61IYfGh4qGV20tKbQSbVbZjJ6B7llvwWTEUc2WV8VpRnROb4kPUrt3j0fU1sFHs2UtbXbtvYImTMTvq/XXULhMvtqZ4DsDQ6w9S1vqZ7Q0SIznIlV7eiYesS7zcBT572FLGC4/g30cb6WQe3UR5DD6eQM+4KhnX6XEL09JqPrPJiWzooJqW8ZNNuEpO0cnNqTzIWPnQRXYuJeOnEVraQkefUfJDI9QKnRSTM16Dq+wslXzuPF8yQoYL0M+YEcec8Trc+MpkVNk0m1yE7D2jitWc8UuXbXE+nq5AeAXI+LyrQqCRFLJ9RpjNhX0Nod3XvYjKu2EH3BnCbw4ZJabrqQiVEpZhud+yazaZCD3eHrTdMW1CTmH/d4nos2H2Jb2qDbjUDebxnvGq0YDQfRJ5X6V9ZKwH0OvDERn3eITQkXoC2p93N4FqV8HPbDjjEbhr3HlM6CZP7Cdj1UDPT4cyLsIvNwnYNa0GJmjUAdk5+Hak8UdeFULPgLmziw0Z6zlw7lVlng599AgFgVJ8Yc1sYqVewsC70Cv8V/UaWw2KMepmR8YHKDrAvove4AClLCkUFQN2s7rMg8tyANoY41gFI1EAbjyjd/sMuglQWQ9g16F1eO9cNOpeHoNuAtULA+/At6drRgbNcyCzViGQjTOORMNF2BAoSNBYpW8Bu944NJ7ocze1sTZRrUBkrHcw8AKTQd1Ukvr+g3BgrDA488c1CUocIcLRWYYgAyJBhzQQ7svohGpcfYRsLl3vGHYtYXPGfRLqwxqjSAKb+/zFMXBS1jmd2L7jFSvV3kKCc97vHQHXUzaaX785AF6aRoZz3x3RZ34co9BTJExHJaLUPzMp9Dl9B5gdDNOkDentoeBdf8VEC43vzg/8TTm+6//TITQdf3GyCvHfls5+0zs09Ls8/5dWXtJlR5/7DwvF0TTheqHsAAAAAElFTkSuQmCC" width="123" height="60"/>
+					</svg>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="network text-center">
+				<a href="#" class="socialLink"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#" class="socialLink"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#" class="socialLink"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+				<a href="#" class="socialLink"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+			</div>
+		</div>
+
+		<div class="row text-center">
+			<ul class="links center-block text-uppercase">
+				<li>membership</li>
+				<li>about us</li>
+				<li>destinations</li>
+				<li>resorts</li>
+				<li>membership</li>
+				<li>program</li>
+				<li>contact</li>
+			</ul>
+
+			<div class="copyright">
+				Copyright © All rights reserved by miiow digital
+			</div>
+		</div>
+	</div> <!-- container-end -->
+
+</footer>
+
+
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>	
+
+<script>
+	window.initMap = function() {
+        var bali = {lat: -8.785828, lng: 115.137512};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: bali
+        });
+    }
+
+    // initiate width for hover
+
+    $(document).ready(function() {
+    	var block4W =$('.img4').width();
+    	var w1 = block4W;
+    	$('.add').hover(function() {
+    		$(this).css('width', w1 + 'px');
+    	}, function() {
+    		/* Stuff to do when the mouse leaves the element */
+    		$(this).css('width', '40px');
+    	}); 
+
+    	var dateWidth =$('.dateField').width();
+    	$('.dateField').on('click', function(event) {
+    		event.preventDefault();
+    		/* Act on the event */
+    		$(".ui-datepicker").css('width', dateWidth+'px');
+    	});
+
+    });
+</script>
+</body>
+</html>
