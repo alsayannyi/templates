@@ -1,0 +1,79 @@
+@font: 'Stardos Stencil', cursive;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	background: url(../images/background.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	header {
+		.logo {
+			max-width: 20vw;
+    		padding-top: 5vw;
+    		padding-left: 4vw;
+		}
+	}
+	.wrapper {
+		display: block;
+		width: 56em;
+		height: 30em;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(120,166,57,.91);
+		border: 1px solid black;
+		.uploadForm  {
+			// height: 12em;
+			width: 100%;
+			height: 100%;
+			.addFile {
+				color: black;
+				border: 2px solid black;
+				background: #c4e696 !important;
+				width: 17%;
+				// height: 50px;
+				position: absolute;
+				bottom: 4%;
+				left: 4%;
+				padding-bottom: 0;
+    			padding-top: 0;
+				&:hover {
+					cursor: pointer;
+				}
+				span {
+
+					font-family: @font;
+					font-size: 2em;
+					font-weight: 700;
+				}
+			}
+			.back {
+				left: 55%;
+			}
+			.send {
+				font-family: @font;
+				font-size: 2em;
+				font-weight: 700;
+				left: 75%;
+			}
+		}
+	}
+	
+
+	footer {
+		position: fixed;
+		bottom: 3.56em;
+		right: 2.8em;
+		.footerImage {
+			max-width: 25vw;
+		}
+	}
+}

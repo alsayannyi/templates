@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>File Sharing</title>
+	<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"
+integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
+crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- CSS Animated -->
+<link rel="stylesheet" href="css/animate.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<!-- Styles and Fonts -->
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<header>
+	<div class="logo col-xs-12 pull-left">
+		<span class="img-responsive" ><i class="fa fa-cloud-upload" aria-hidden="true" style="font-size:7vw;color: #fff;box-shadow: 2px 2px 5px #000000d4;border-radius: 4px;"></i></span>
+		<!-- <img src="images/logo.png" alt="logo" class="img-responsive"> -->
+	</div>
+</header>
+
+<section class="wrapper center-block" id='circleRabbit'>
+	<form class="imageUpload text-center" enctype="multipart/form-data" onmouseover="mouseOver()" onmouseout="mouseOut()">
+		<p class="text-center text-uppercase">send</p>
+	    <label for="file-input" >
+	    	<span class="img-responsive rabbit" id="sender" ></span>
+	        <!-- <img src="images/rabbit1.png" class="img-responsive rabbit" id="rabbit" onmouseover="mouseOver()" onmouseout="mouseOut()" > -->
+	    </label>
+	    <input type="image"  name="startUpload" class="btn btn-primary" id="file-input" data-toggle="modal" data-target="#myModal" onclick="return modalWindow()" />
+		<p class="text-center text-uppercase">data</p>
+	    <!-- <input id="file-input" type="file"> -->
+	</form>
+</section>
+
+
+<!-- modal hidden for upload -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog externalBlock" role="document">
+    <div class="modal-content wrapper1">
+
+      <div class="modal-body internalBlock">
+       <section class="formWrapper center-block">
+			<form class="uploadForm text-center" id="formID" enctype="multipart/form-data" method="POST">
+			  <label id="addFileLabel" class="btn btn-default btn-file addFile text-center">
+			    <span class="center-block">ADD</span>
+			    <input type="file" onchange="styleModalWindow()" class="hidden" id="fileUpload" name="uploadedfile[]" multiple>
+			</label>
+			<ul id="fileList"></ul>
+			<button type="button" class="btn btn-default back addFile text-center" data-dismiss="modal" onclick="returnRabbit()" id="back">BACK</button>
+       		<button id="uploadBtn" type="submit" class="btn btn-primary addFile send text-center">SEND</button>
+			</form>
+		</section>
+      </div>
+        
+    </div>  <!-- end modal-content -->
+  </div> <!-- end modal-dialog -->
+</div> <!-- end modal -->
+
+
+<footer >
+	<div class="footerImage pull-right">
+		<!-- <span class="img-responsive"><i class="fa fa-paper-plane-o" aria-hidden="true" style="font-size:8vw;color:#43372d;"></i></span> -->
+		<!-- <img src="images/rabbits.png" alt="rabbits" class="img-responsive"> -->
+	</div>	
+</footer>
+
+<script>
+
+// remove  previously added file on click
+	function removeParent(event) {
+					
+					var eventContainer =event.currentTarget;
+					var parent = eventContainer.parentNode.parentNode;
+					var removingElem = eventContainer.parentNode;
+					removingElem.classList.remove('fadeInDownBig');
+					removingElem.classList.add('fadeOutLeftBig');
+
+					setTimeout(delayRemove, 2000);
+
+					function delayRemove() {
+						var a = parent.removeChild(eventContainer.parentNode);
+						return a;
+					}
+					this.styleModalWindow();
+					
+					
+	}
+// changing rabbit on hover
+	function mouseOver() {
+   		//document.getElementById("sender");
+   		var addIcon =$('<i class="fa fa-paper-plane-o flag" aria-hidden="true" style=" position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);font-size:4em;color:#f9f9f9;"></i>').appendTo('#sender');
+//document.getElementById("rabbit").src= "images/rabbitFile.png";
+	}
+
+	function mouseOut() {
+		//debugger;
+		$( '.flag' ).remove();
+    	//document.getElementById("rabbit").src= "images/rabbit1.png";
+	}
+
+// launch Modal Window
+	function modalWindow() {
+		//debugger;
+		var switcher = document.getElementById('circleRabbit').style.display;
+		document.body.style.backgroundImage = "url('./images/wb.jpg')";
+
+		if (switcher == "block" || switcher == "") {
+			document.getElementById('circleRabbit').style.display = "none";
+		} else {
+			document.getElementById('circleRabbit').style.display = "block";
+		}
+		//debugger;
+		this.styleModalWindow();
+		return false;
+		$('#myModal').modal('toggle');
+		debugger;
+
+	} 
+// change styles in Modal Window
+	function styleModalWindow() {
+		//debugger;
+		var bgTrigger = document.getElementsByClassName('uploadParams');
+		var addFileBtn = document.getElementById('addFileLabel');
+		var backBtn = document.getElementById('back');
+		var sendBtn = document.getElementById('uploadBtn');
+		var modalWindow = document.getElementById('myModal');
+		// if-check bgTrigger.length == 0
+		if ( !document.getElementById("fileUpload").value ) {
+							
+			addFileBtn.style.borderColor = "#bbbec4";
+			backBtn.style.borderColor = "#d4d3d8";
+			backBtn.style.color = "#595a5e";
+			sendBtn.style.borderColor = "#d4d3d8";
+			modalWindow.style.borderColor = "#d4d3d8";
+			//modalWindow.style.borderColor = "#edb21ebf";
+		} else {
+			addFileBtn.style.borderColor = "#fcbf26";
+			//modalWindow.style.borderColor = "#5ac2b7";
+			modalWindow.style.borderColor = "#f8e6d0";
+			backBtn.style.borderColor = "#fbe8dd";
+			sendBtn.style.borderColor = "#f8e6d0";
+		}
+	}
+
+// event listener on Back-Btn click
+	function returnRabbit() {
+		//debugger;
+		let switcher = document.getElementById('circleRabbit').style.display;
+
+		if (switcher == "block" || switcher == "") {
+			document.getElementById('circleRabbit').style.display = "none";
+		} else {
+			document.getElementById('circleRabbit').style.display = "block";
+		}
+		document.getElementById("formID").reset(); // clear form values
+		
+		// delete li.uploadFiles from DOM on Back-Btn
+		debugger;
+		var checker = document.querySelector('li.uploadParams');
+		if ( checker ) {
+			var  fileGroup = document.getElementById("fileList");
+			//var childrenLi = fileGroup.childNodes;
+			while (fileGroup.firstChild) {
+        		fileGroup.removeChild(fileGroup.firstChild);
+			}
+			
+		}
+		
+
+		document.body.style.backgroundImage = "url('./images/apple.jpg')";
+		return switcher;
+	}
+
+
+// add fileName
+	$("document").ready(function(){
+        $("#fileUpload").on("change", function() {
+        	var file = this.files[0];
+		    var fileSize = file.size;
+		    var getFullName = $('#fileUpload').val();
+		    var splitName = getFullName.split("\\");
+		    var fileName = splitName[2];
+
+		    var addFileString =$('<li class="uploadParams animated fadeInDownBig" style=""><span style="color: #907c6a;">the uploaded file: </span> ' + fileName + ', <span style="color: #907c6a;"> size: </span> ' + fileSize + ' bytes ' + 
+		    	'<span style="color:#24272e; font-size: 1.3em;" class="glyphicon glyphicon-remove-circle pull-right removeFile btn" aria-hidden="true" onclick="removeParent(event)"></span>' +
+		    	 '</li>').appendTo('#fileList');
+		});
+	});
+
+var elem = document.getElementById('fileList');
+var fileArr = document.getElementsByClassName('removeFile');
+
+
+</script>
+</body>
+</html>

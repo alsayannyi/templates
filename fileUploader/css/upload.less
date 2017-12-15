@@ -1,0 +1,131 @@
+@font: 'Stardos Stencil', cursive;
+@mobile:   ~"only screen and (max-width: 480px)";
+@tablet:   ~"only screen and (min-width: 481px) and (max-width: 768px)";
+@desktop:   ~"only screen and (min-width: 768px) and (max-width: 992px)";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	background: url(../images/background.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	header {
+		.logo {
+			width: 15%;
+    		min-width: 110px;
+    		padding-top: 5vw;
+    		padding-left: 4vw;
+		}
+	}
+	
+	.wrapper {
+     	@media @mobile {
+     		width: 85%;
+    		height: 30%;
+     	}
+		@media @tablet {
+     		width: 70%;
+    		height: 38%;
+     	}
+     	@media @desktop {
+     		width: 63%;
+    		height: 44%;
+     	}
+		display: block;
+		// width: 60%;
+    	// height: 50%;
+    	
+		max-width: 56em;
+		max-height: 30em;
+		position: absolute;
+		margin: auto;
+		padding-left: 0;
+		padding-right: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(120,166,57,.91);
+		border: 1px solid black;
+		.uploadForm  {
+			// height: 12em;
+			width: 100%;
+			height: 100%;
+			.download-wrapper {
+				color: black;
+				// width: 50%;
+				max-width: 42%;
+				top: 4%;
+    			left: 25%;
+				// height: 50px;
+				position: absolute;
+				padding-bottom: 0;
+    			padding-top: 0;
+    			p {
+    				font-family: @font;
+    				font-size: 1.5em;
+    				font-weight: 700;
+    				&:first-child {
+    					font-size: 3vw;
+    				}
+    			}
+				
+			}
+			.getLink {
+				@media @desktop {
+					top: 17%;
+				}
+				font-family: @font;
+				font-size: 1.5em;
+				font-weight: 700;
+				color: black;
+				background: #c4e696 !important;
+				border: 2px solid black;
+				display: block;
+				width: 50%;
+				height: 2em;
+				line-height: 2em;
+				padding-top: 0;
+				padding-bottom: 0;
+				position: absolute;
+				margin: auto;
+				top: 15%;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+			.reject {
+				font-family: @font;
+				font-size: 1.5em;
+				font-weight: 700;
+				left: 75%;
+				color: black;
+				border: 2px solid black;
+				background: #c4e696 !important;
+				width: 17%;
+				position: absolute;
+				bottom: 4%;
+				padding-bottom: 0;
+    			padding-top: 0;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	
+
+	footer {
+		padding-top: 1%;
+		position: fixed;
+		bottom: 3.56em;
+		right: 2.8em;
+		.footerImage {
+			max-width: 65%;
+		}
+	}
+}
