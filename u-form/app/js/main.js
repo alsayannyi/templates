@@ -137,6 +137,7 @@ let finBtn4 = document.getElementById('financeBtn4');
 let finBtn5 = document.getElementById('financeBtn5');
 
 function onFinBtnClick(activeBtn, unactiveBtn1, unactiveBtn2, unactiveBtn3, unactiveBtn4, setElemStyles ){
+    
     let curContext = event.currentTarget;
     activeBtn.classList.add('active');
     deactiveFinBtn(unactiveBtn1);
@@ -182,7 +183,7 @@ finBtn5.addEventListener("click", event => {
 
 // for (let i=1; i<6; i++) {
 //     if (i != 2) {
-//         `finBtn${i}`.addEventListener("click", event => {
+//         `finBtn${i}`.addEventListener("click", function (event) {
 //             let currentEl = event.currentTarget;
 //             document.querySelector('form.credit-card').classList.remove('active-state');
 //             this.onBtnClick(btn1, btn2, btn3, btn4, btn5, currentEl.addActiveStyles);

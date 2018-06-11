@@ -13,6 +13,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var concat = require('gulp-concat');
 var deploy = require('gulp-gh-pages');
+var terser = require('gulp-terser');
 
 // Creating Tasks 
 // simple syntax and test
@@ -37,15 +38,25 @@ gulp.task('sass', function(){
       }))
   });
 // concatenating (combine) and minifying js+css files on running $ gulp useref
+// gulp.task('useref', function(){
+// return gulp.src('app/*.html')
+//     .pipe(useref())
+//     // Minifies only if it's a JavaScript file
+//     .pipe(gulpIf('*.js', uglify()))
+//     // Minifies only if it's a CSS file
+//     .pipe(gulpIf('*.css', cssnano()))
+//     .pipe(gulp.dest('dist'));
+// });
+// using terser to es6-minify
 gulp.task('useref', function(){
-return gulp.src('app/*.html')
-    .pipe(useref())
-    // Minifies only if it's a JavaScript file
-    .pipe(gulpIf('*.js', uglify()))
-    // Minifies only if it's a CSS file
-    .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'))
-});
+  return gulp.src('app/*.html')
+      .pipe(useref())
+      // Minifies only if it's a JavaScript file
+      .pipe(gulpIf('*.js', terser()))
+      // Minifies only if it's a CSS file
+      .pipe(gulpIf('*.css', cssnano()))
+      .pipe(gulp.dest('dist'));
+  });
 // Optimizing images & caching them on running $ gulp images
 gulp.task('images', function(){
     return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
