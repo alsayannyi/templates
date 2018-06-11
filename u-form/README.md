@@ -9,3 +9,7 @@
 
 - The page's title contains  built-in video made with svg.
 
+## How to open?
+
+> You can find page by clicking on the [link](https://alsayannyi.github.io/templates/u-form/dist/index.html)
+
