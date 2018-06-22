@@ -8,8 +8,8 @@
 
 -  [User Form](https://alsayannyi.github.io/templates/u-form/dist/index.html)
 It's made with Gulp, Grid Layout and Text With Looping Video
-- [Shopping Card](https://alsayannyi.github.io/templates/dist/shopping%20card/index.html)
-It's based on VueJS, Vuex and Webpack Template
+- [Shopping Card](https://alsayannyi.github.io/templates/shopping%20card/dist/index.html)
+Small  fragment of UX based on VueJS, Vuex and Webpack Template
 
 - [File Loader](https://alsayannyi.github.io/templates/fileUploader/index.html) 
 
