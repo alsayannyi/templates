@@ -3,7 +3,7 @@
 ## What's all  this about?
 
 > it's a try of using VueJS + Vuex
-> You can check page with via this [link](example.com)
+> You can check page with via this [link](https://alsayannyi.github.io/templates/shopping%20card/index.html)
 
 ## What's included
 - webpack template
